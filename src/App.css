@@ -124,3 +124,7 @@ nav {
   background-color: rgb(0, 0, 0);
   outline: 2px var(--text-primary) solid;
 }
+
+input[type="radio"] {
+  display: none;
+}

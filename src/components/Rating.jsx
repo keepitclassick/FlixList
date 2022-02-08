@@ -4,7 +4,13 @@ const Rating = () => {
   return (
     <h1>
       {[...Array(5)].map((star) => {
-        return <FaStar />;
+        return (
+          <label>
+            {" "}
+            <input type="radio" name="rating" />
+            <FaStar />
+          </label>
+        );
       })}
     </h1>
   );
