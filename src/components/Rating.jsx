@@ -1,6 +1,8 @@
 import { FaStar } from "react-icons/fa";
+import { useState } from "react";
 
 const Rating = () => {
+  const [rating, setRating] = useState(null);
   return (
     <h1>
       {[...Array(5)].map((star, i) => {
@@ -14,7 +16,7 @@ const Rating = () => {
               value={ratingVal}
               onClick={() => setRating(ratingVal)}
             />
-            <FaStar />
+            <FaStar color={ratingVal <= rating ? "yellow" : "grey"} />
           </label>
         );
       })}
