@@ -1,38 +1,126 @@
-.App {
-  text-align: center;
+body {
+  color: #94108d;
+  font-family: "Raleway", sans-serif;
+  background-size: cover;
+  background-color: black;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#heading {
+  font-size: 3 em;
+  background: rgba(253, 253, 253, 0.5);
+  border-radius: 0px 30px 30px 0px;
+  width: 350px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+#search {
+  background-color: rgba(53, 51, 51, 0.5);
   color: white;
+  border-radius: 20px 20px 20px 20px;
+  width: 300px;
+  font-size: medium;
 }
 
-.App-link {
-  color: #61dafb;
+#main-title {
+  font-size: 4em;
+  text-align: center;
+  background-color: black;
+}
+.movie-app > .row {
+  overflow-x: auto;
+  flex-wrap: nowrap;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+img#moviePic {
+  height: 300px;
+}
+.image-container {
+  position: relative;
+  transition: transform 0.2s;
+  max-width: 500px;
+}
+
+.image-container:hover {
+  cursor: pointer;
+  transform: scale(0.9);
+}
+
+.image-container:hover .overlay {
+  opacity: 1;
+}
+
+.overlay {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.6);
+  transition: 0.5s ease;
+  opacity: 0;
+  font-size: 20px;
+  text-align: center;
+  display: block;
+
+  top: 0;
+  left: 10;
+  height: 100%;
+  width: 90%;
+  z-index: 10;
+}
+
+[data-theme="dark"] {
+  background: black;
+  background-image: url("https://i.pinimg.com/originals/29/f0/f6/29f0f6b9eb3c78a9d4b5e17a14cf3ab2.jpg");
+  color: rgb(214, 4, 4);
+  border-radius: 0px 30px 30px 0px;
+  background-color: black;
+  border: 1px solid #aa0000;
+}
+
+[data-theme="light"] {
+  background: rgb(116, 18, 146);
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWop6EsOLE3gBYPj9_lMuesJfviHZLJlKdJg&usqp=CAU");
+  color: rgb(214, 4, 151);
+  background-size: cover;
+  border: 1px solid #861263;
+}
+.App {
+  color: var(--text-primary);
+  background-color: var(--background);
+  font-size: large;
+  font-weight: bold;
+  padding: 20px;
+  height: calc(100vh - 40px);
+  transition: all 0.1s;
+}
+button {
+  color: var(--text-primary);
+  background-color: rgb(107, 105, 105);
+  border: 2px var(--text-primary) solid;
+  float: right;
+  transition: all 0.5s;
+  width: 70 px;
+  padding: 10px;
+  border-radius: 30px 30px 30px 30px;
+  font-size: 16px;
+}
+
+body::-webkit-scrollbar {
+  width: 1em;
+}
+
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(184, 181, 181, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: rgb(7, 7, 7);
+  outline: 1px solid rgb(39, 39, 39);
+}
+
+nav {
+  padding: 50px;
+}
+
+::-webkit-scrollbar {
+  height: 1em; /* height of horizontal scrollbar ← You're missing this */
+  width: 1em; /* width of vertical scrollbar */
+  background-color: rgb(0, 0, 0);
+  outline: 2px var(--text-primary) solid;
 }
