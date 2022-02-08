@@ -13,7 +13,7 @@ function App() {
   const defaultDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
   const [movies, setMovies] = useState([]);
   const [searchValue, setSearchValue] = useState("");
-  const [rating, setRating] = useState("");
+  const [rating, setRating] = useState(0);
   const [favourites, setFavourites] = useState([]);
   const [theme, setTheme] = useLocalStorage(
     "theme",
@@ -115,6 +115,8 @@ function App() {
             movies={favourites}
             FavouritesComponent={RemoveFavourites}
             handleFavouritesClick={removeFavouriteMovie}
+            rating={rating}
+            setRating={setRating}
           />
         </div>
       </div>

@@ -1,3 +1,5 @@
+import Rating from "../components/Rating";
+
 const MovieList = (props) => {
   const FavouritesComponent = props.FavouritesComponent;
 
@@ -11,6 +13,9 @@ const MovieList = (props) => {
             className="overlay d-flex align-items-center justify-content-center"
           >
             <FavouritesComponent />
+          </div>
+          <div>
+            <Rating />
           </div>
         </div>
       ))}
