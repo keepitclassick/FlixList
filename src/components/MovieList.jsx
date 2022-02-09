@@ -14,13 +14,11 @@ const MovieList = (props) => {
               className="overlay d-flex align-items-center justify-content-center"
             >
               {" "}
-              <div id="rating">
-                <Rating movie={movie.imdbID} addRatings={props.addRatings} />
-              </div>
               <div id="favourite">
                 <FavouritesComponent />
               </div>
             </div>
+            <Rating movie={movie.imdbID} addRatings={props.addRatings} />
           </div>
         </>
       ))}

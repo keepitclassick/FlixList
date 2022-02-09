@@ -37,7 +37,7 @@ function App() {
     saveToLocalStorage(newFavouriteList);
   };
 
-  const addRatings = (movie, rating) => {
+  const addRatings = (movie) => {
     const newRatings = [...ratings, movie];
 
     const saveRatings = (ratings) => {
@@ -99,7 +99,7 @@ function App() {
           <h1 class="title">
             FlixList <br />
             <button onClick={switchTheme}>
-              Switch to {theme === "light" ? "Gary Mode" : "Kayla Mode"}
+              Switch to {theme === "light" ? "Dark Mode" : "Light Mode"}
             </button>
           </h1>
 

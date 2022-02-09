@@ -22,7 +22,7 @@ const Rating = (props) => {
               }}
             />
             <FaStar
-              color={ratingVal <= (hover || rating) ? "yellow" : "grey"}
+              color={ratingVal <= (hover || rating) ? "gold" : "grey"}
               onMouseEnter={() => setHover(ratingVal)}
               onMouseLeave={() => setHover(null)}
             />
