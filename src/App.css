@@ -7,7 +7,9 @@ body {
 
 #heading {
   font-size: 3 em;
-  background: rgba(253, 253, 253, 0.5);
+
+  background: rgb(74 72 72 / 50%);
+
   border-radius: 0px 30px 30px 0px;
   width: 350px;
 }

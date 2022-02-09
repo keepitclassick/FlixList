@@ -1,8 +1,10 @@
 import { FaStar } from "react-icons/fa";
 import { useState } from "react";
 
-const Rating = () => {
+const Rating = (props) => {
   const [rating, setRating] = useState(null);
+  const [hover, setHover] = useState(null);
+
   return (
     <h1>
       {[...Array(5)].map((star, i) => {
@@ -14,9 +16,16 @@ const Rating = () => {
               type="radio"
               name="rating"
               value={ratingVal}
-              onClick={() => setRating(ratingVal)}
+              onClick={() => {
+                props.addRatings({ movie: props.movie, rating: ratingVal });
+                setRating(ratingVal);
+              }}
             />
-            <FaStar color={ratingVal <= rating ? "yellow" : "grey"} />
+            <FaStar
+              color={ratingVal <= (hover || rating) ? "yellow" : "grey"}
+              onMouseEnter={() => setHover(ratingVal)}
+              onMouseLeave={() => setHover(null)}
+            />
           </label>
         );
       })}

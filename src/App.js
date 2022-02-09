@@ -18,6 +18,7 @@ function App() {
     "theme",
     defaultDark ? "dark" : "light"
   );
+  const [ratings, setRatings] = useState([]);
 
   const getMovies = async (searchValue) => {
     const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=8186b72e`;
@@ -28,10 +29,22 @@ function App() {
       setMovies(resJson.Search);
     }
   };
+
   const addFavouriteMovie = (movie) => {
     const newFavouriteList = [...favourites, movie];
     setFavourites(newFavouriteList);
     saveToLocalStorage(newFavouriteList);
+  };
+
+  const addRatings = (movie, rating) => {
+    const newRatings = [...ratings, movie];
+
+    const saveRatings = (ratings) => {
+      localStorage.setItem("movie-app-ratings", JSON.stringify(ratings));
+    };
+
+    setRatings(newRatings);
+    saveRatings(newRatings);
   };
 
   useEffect(() => {
@@ -104,6 +117,7 @@ function App() {
             movies={movies}
             FavouritesComponent={AddFavourites}
             handleFavouritesClick={addFavouriteMovie}
+            addRatings={addRatings}
           />
         </div>
         <div className="row d-flex align-items-center mt-4 mb-4">
