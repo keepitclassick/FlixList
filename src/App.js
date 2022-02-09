@@ -8,6 +8,7 @@ import AddFavourites from "./components/AddFavourites";
 import RemoveFavourites from "./components/RemoveFavourites";
 import FavouriteList from "./components/FavouriteList";
 import useLocalStorage from "use-local-storage";
+import Rating from "./components/Rating";
 
 function App() {
   const defaultDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
@@ -56,7 +57,10 @@ function App() {
       localStorage.getItem("movie-app-favourites")
     );
 
+    const movieRatings = JSON.parse(localStorage.getItem("movie-app-ratings"));
+
     setFavourites(movieFavourites);
+    setRatings(movieRatings);
   }, []);
 
   const saveToLocalStorage = (items) => {
@@ -119,6 +123,7 @@ function App() {
             handleFavouritesClick={addFavouriteMovie}
             addRatings={addRatings}
           />
+          <Rating />
         </div>
         <div className="row d-flex align-items-center mt-4 mb-4">
           <MovieListHeading heading="Watch List" />

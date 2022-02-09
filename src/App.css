@@ -7,9 +7,7 @@ body {
 
 #heading {
   font-size: 3 em;
-
   background: rgb(74 72 72 / 50%);
-
   border-radius: 0px 30px 30px 0px;
   width: 350px;
 }
@@ -35,6 +33,7 @@ body {
 img#moviePic {
   height: 300px;
 }
+
 .image-container {
   position: relative;
   transition: transform 0.2s;
@@ -57,8 +56,8 @@ img#moviePic {
   opacity: 0;
   font-size: 20px;
   text-align: center;
-  display: block;
-
+  display: flex;
+  flex-direction: column;
   top: 0;
   left: 10;
   height: 100%;
