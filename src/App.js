@@ -75,6 +75,18 @@ function App() {
     saveToLocalStorage(newFavouriteList);
   };
 
+  const removeMovieRating = (movie) => {
+    const saveRatings = (ratings) => {
+      localStorage.setItem("movie-app-ratings", JSON.stringify(ratings));
+    };
+
+    const newRatingList = ratings.filter(
+      (rating) => rating.imdbID !== movie.imdbID
+    );
+    setFavourites(newRatingList);
+    saveRatings(newRatingList);
+  };
+
   const switchTheme = () => {
     const newTheme = theme === "light" ? "dark" : "light";
     setTheme(newTheme);
@@ -84,9 +96,8 @@ function App() {
     <>
       <div className="container-fluid movie-app" data-theme={theme}>
         <nav class="navbar navbar-dark bg-dark">
-          <h1>
-            Super Special Watch List <br />
-            ----------------
+          <h1 class="title">
+            FlixList <br />
             <button onClick={switchTheme}>
               Switch to {theme === "light" ? "Gary Mode" : "Kayla Mode"}
             </button>
@@ -123,7 +134,6 @@ function App() {
             handleFavouritesClick={addFavouriteMovie}
             addRatings={addRatings}
           />
-          <Rating />
         </div>
         <div className="row d-flex align-items-center mt-4 mb-4">
           <MovieListHeading heading="Watch List" />

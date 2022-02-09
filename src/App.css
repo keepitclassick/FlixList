@@ -5,6 +5,11 @@ body {
   background-color: black;
 }
 
+.title {
+  font-family: "Lobster", cursive;
+  font-size: 75px;
+}
+
 #heading {
   font-size: 3 em;
   background: rgb(74 72 72 / 50%);
@@ -23,7 +28,7 @@ body {
 #main-title {
   font-size: 4em;
   text-align: center;
-  background-color: black;
+  background-color: rgb(139, 96, 96);
 }
 .movie-app > .row {
   overflow-x: auto;
@@ -67,10 +72,11 @@ img#moviePic {
 
 [data-theme="dark"] {
   background: black;
-  background-image: url("https://i.pinimg.com/originals/29/f0/f6/29f0f6b9eb3c78a9d4b5e17a14cf3ab2.jpg");
+  background-image: url("https://cdn.staticcrate.com/stock-hd/effects/footagecrate-low-poly-background-black-wall-prev-full.png");
   color: rgb(214, 4, 4);
   border-radius: 0px 30px 30px 0px;
   background-color: black;
+  background-size: cover;
   border: 1px solid #aa0000;
 }
 
