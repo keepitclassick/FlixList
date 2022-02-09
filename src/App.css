@@ -1,6 +1,6 @@
 body {
   color: #94108d;
-  font-family: "Raleway", sans-serif;
+  font-family: "Oswald", sans-serif;
   background-size: cover;
   background-color: black;
 }
@@ -8,17 +8,19 @@ body {
 .title {
   font-family: "Lobster", cursive;
   font-size: 75px;
+  text-shadow: 4px 4px #1d1c1c;
 }
 
 #heading {
-  font-size: 3 em;
+  font-size: 2em;
   background: rgb(74 72 72 / 50%);
   border-radius: 0px 30px 30px 0px;
   width: 350px;
+  text-shadow: 2px 2px #1d1c1c;
 }
 
 #search {
-  background-color: rgba(53, 51, 51, 0.5);
+  background-color: rgba(78, 76, 76, 0.5);
   color: white;
   border-radius: 20px 20px 20px 20px;
   width: 300px;
@@ -82,8 +84,8 @@ img#moviePic {
 
 [data-theme="light"] {
   background: rgb(116, 18, 146);
-  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWop6EsOLE3gBYPj9_lMuesJfviHZLJlKdJg&usqp=CAU");
-  color: rgb(214, 4, 151);
+  background-image: url("https://spinaroundsounddj.com/wp-content/uploads/2015/08/geometric-bg-2.jpg");
+  color: rgb(255, 255, 255);
   background-size: cover;
   border: 1px solid #861263;
 }
@@ -96,6 +98,7 @@ img#moviePic {
   height: calc(100vh - 40px);
   transition: all 0.1s;
 }
+
 button {
   color: var(--text-primary);
   background-color: rgb(107, 105, 105);
@@ -134,4 +137,8 @@ nav {
 
 input[type="radio"] {
   display: none;
+}
+
+.navbar-custom {
+  background-color: #2e2c30;
 }

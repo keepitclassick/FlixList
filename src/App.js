@@ -95,7 +95,7 @@ function App() {
   return (
     <>
       <div className="container-fluid movie-app" data-theme={theme}>
-        <nav class="navbar navbar-dark bg-dark">
+        <nav class="navbar navbar-custom">
           <h1 class="title">
             FlixList <br />
             <button onClick={switchTheme}>
