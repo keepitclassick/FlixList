@@ -1,6 +1,5 @@
 const express = require("express");
 const router = express.Router();
-const { getPostsByUsers } = require("../helpers/dataHelpers");
 
 module.exports = ({ getUsers, getUserByEmail, addUser, getUsersPosts }) => {
   /* GET users listing. */
