@@ -8,7 +8,7 @@ import AddFavourites from "./components/AddFavourites";
 import RemoveFavourites from "./components/RemoveFavourites";
 import FavouriteList from "./components/FavouriteList";
 import useLocalStorage from "use-local-storage";
-import axios from "axios";
+import Login from "./components/Login";
 
 function App() {
   const defaultDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
@@ -150,7 +150,12 @@ function App() {
             </div>
           </>
         ) : (
-          <div>Log in to add to your watch list!</div>
+          <div>
+            <center>
+              <h2>Log in to add to your watch list!</h2>
+              <Login />
+            </center>
+          </div>
         )}
       </div>
     </>
