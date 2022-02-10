@@ -1,5 +1,6 @@
 import { FaStar } from "react-icons/fa";
 import { useState } from "react";
+import axios from "axios";
 
 const Rating = (props) => {
   const [rating, setRating] = useState(null);
@@ -19,13 +20,30 @@ const Rating = (props) => {
               onClick={() => {
                 props.addRatings({ movie: props.movie, rating: ratingVal });
                 setRating(ratingVal);
+
+                axios
+                  .post("/api/ratings", {
+                    movie: props.movie,
+                    rating: ratingVal,
+                  })
+                  .then((res) => {
+                    console.log(res);
+                  })
+                  .catch((err) => {
+                    console.log(err);
+                  });
               }}
-            />
-            <FaStar
-              color={ratingVal <= (hover || rating) ? "gold" : "grey"}
-              onMouseEnter={() => setHover(ratingVal)}
-              onMouseLeave={() => setHover(null)}
-            />
+            />{" "}
+            <div class="star">
+              <FaStar
+                color={
+                  ratingVal <= (hover || rating) ? "DarkGoldenRod" : "grey"
+                }
+                onMouseEnter={() => setHover(ratingVal)}
+                onMouseLeave={() => setHover(null)}
+                size={38.5}
+              />
+            </div>
           </label>
         );
       })}

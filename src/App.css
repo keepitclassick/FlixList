@@ -20,8 +20,8 @@ body {
 }
 
 #search {
-  background-color: rgba(78, 76, 76, 0.5);
-  color: white;
+  background-color: #505157;
+  color: rgb(255, 255, 255);
   border-radius: 20px 20px 20px 20px;
   width: 300px;
   font-size: medium;
@@ -32,6 +32,7 @@ body {
   text-align: center;
   background-color: rgb(139, 96, 96);
 }
+
 .movie-app > .row {
   overflow-x: auto;
   flex-wrap: nowrap;
@@ -44,6 +45,7 @@ img#moviePic {
 .image-container {
   position: relative;
   transition: transform 0.2s;
+
   max-width: 500px;
 }
 
@@ -94,7 +96,6 @@ img#moviePic {
   background-color: var(--background);
   font-size: large;
   font-weight: bold;
-
   height: calc(100vh - 40px);
   transition: all 0.1s;
 }

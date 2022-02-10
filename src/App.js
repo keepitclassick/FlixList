@@ -8,7 +8,7 @@ import AddFavourites from "./components/AddFavourites";
 import RemoveFavourites from "./components/RemoveFavourites";
 import FavouriteList from "./components/FavouriteList";
 import useLocalStorage from "use-local-storage";
-import Rating from "./components/Rating";
+import axios from "axios";
 
 function App() {
   const defaultDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
