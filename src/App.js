@@ -153,7 +153,7 @@ function App() {
           <div>
             <center>
               <h2>Log in to add to your watch list!</h2>
-              <Login />
+              <Login setLoggedIn={setLoggedIn} />
             </center>
           </div>
         )}
