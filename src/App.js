@@ -20,6 +20,7 @@ function App() {
     defaultDark ? "dark" : "light"
   );
   const [ratings, setRatings] = useState([]);
+  const [loggedIn, setLoggedIn] = useState(false);
 
   const getMovies = async (searchValue) => {
     const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=8186b72e`;
@@ -123,7 +124,6 @@ function App() {
             />{" "}
           </form>
         </nav>
-
         <div className="row d-flex align-items-center mt-4 mb-4">
           <MovieListHeading heading="Search Results" />{" "}
         </div>
@@ -135,16 +135,23 @@ function App() {
             addRatings={addRatings}
           />
         </div>
-        <div className="row d-flex align-items-center mt-4 mb-4">
-          <MovieListHeading heading="Watch List" />
-        </div>
-        <div className="row">
-          <FavouriteList
-            movies={favourites}
-            FavouritesComponent={RemoveFavourites}
-            handleFavouritesClick={removeFavouriteMovie}
-          />
-        </div>
+
+        {loggedIn ? (
+          <>
+            <div className="row d-flex align-items-center mt-4 mb-4">
+              <MovieListHeading heading="Watch List" />
+            </div>
+            <div className="row">
+              <FavouriteList
+                movies={favourites}
+                FavouritesComponent={RemoveFavourites}
+                handleFavouritesClick={removeFavouriteMovie}
+              />
+            </div>
+          </>
+        ) : (
+          <div>Log in to add to your watch list!</div>
+        )}
       </div>
     </>
   );
