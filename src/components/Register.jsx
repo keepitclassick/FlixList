@@ -69,10 +69,15 @@ export default function Registration(props) {
               setPassword(e.target.value);
             }}
           />
+          <Button
+            id="regSubmit"
+            variant="dark"
+            type="submit"
+            onClick={register}
+          >
+            Submit
+          </Button>
         </Form.Group>
-        <Button id="regSubmit" variant="dark" type="submit" onClick={register}>
-          Submit
-        </Button>
       </Form>
     </div>
   );
