@@ -1,6 +1,6 @@
 ## FlixList
 
-This project was built using React, Bootstrap, and Express along with the OMDB API to support the movie search.
+Search movies by title, add them to your watch list! Be sure to login or register to access the watch list feature. This project was built using React, Bootstrap, and Express along with the OMDB API to support the movie search.
 
 # Getting Started
 
