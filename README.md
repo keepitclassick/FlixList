@@ -13,7 +13,9 @@ This project was built using React, Bootstrap, and Express along with the OMDB A
 # Add or Remove Movies from your FlixList
 
 <img src="https://github.com/keepitclassick/FlixList/blob/master/public/Read-me%20Gifs/2022-02-11%2013.33.02.gif?raw=true" width="500" height="300"/>
+
 # Dark Mode or Light Mode
+
 <img src="https://github.com/keepitclassick/FlixList/blob/master/public/Read-me%20Gifs/2022-02-11%2013.36.35.gif?raw=true" width="500" height="300"/>
 
 In the project directory, you can run:
