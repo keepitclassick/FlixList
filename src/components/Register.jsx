@@ -13,7 +13,7 @@ export default function Registration(props) {
       name: usersName,
       email: email,
       password: password,
-      photo: selectedFile.name,
+      photo: selectedFile,
     })
       .then((res) => {
         console.log(res);
@@ -84,7 +84,6 @@ export default function Registration(props) {
             accept="image/*"
             onChange={fileHandler}
           />
-          <div id="app"></div>
         </form>
         <Button variant="dark" type="submit" onClick={register}>
           Submit

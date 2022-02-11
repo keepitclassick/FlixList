@@ -60,9 +60,11 @@ function App() {
     );
 
     const movieRatings = JSON.parse(localStorage.getItem("movie-app-ratings"));
+    const user = JSON.parse(localStorage.getItem("userID"));
 
     setFavourites(movieFavourites);
     setRatings(movieRatings);
+    setLoggedIn(user);
   }, []);
 
   const saveToLocalStorage = (items) => {
@@ -89,6 +91,14 @@ function App() {
     saveRatings(newRatingList);
   };
 
+  const logout = () => {
+    const user = JSON.parse(localStorage.getItem("userID"));
+    if (user) {
+      localStorage.removeItem("userID");
+      setLoggedIn(false);
+    }
+  };
+
   const switchTheme = () => {
     const newTheme = theme === "light" ? "dark" : "light";
     setTheme(newTheme);
@@ -105,7 +115,7 @@ function App() {
               Switch to {theme === "light" ? "Dark Mode" : "Light Mode"}
             </button>
           </h1>
-          {user ? <button>Logout</button> : <button>Register</button>}
+          {user ? <button onClick={logout}>Logout</button> : null}
           <form class="form-inline d-flex">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -127,7 +137,11 @@ function App() {
           </form>
         </nav>
         <div className="row d-flex align-items-center mt-4 mb-4">
-          <MovieListHeading heading="Search Results" />{" "}
+          {!searchValue && !movies ? (
+            <h1>No Search Entered. Search above!</h1>
+          ) : (
+            <MovieListHeading heading="Search Results" />
+          )}
         </div>
         <div className="row">
           <MovieList
@@ -155,8 +169,7 @@ function App() {
           <div>
             <center>
               <h2>Log in to add to your watch list!</h2>
-
-              <Register setLoggedIn={setLoggedIn} />
+              <Login setLoggedIn={setLoggedIn} />
             </center>
           </div>
         )}

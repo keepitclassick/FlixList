@@ -24,7 +24,6 @@ const MovieList = (props) => {
                 <FavouritesComponent />
               </div>
             </div>
-            <Rating movie={movie.imdbID} addRatings={props.addRatings} />
           </div>
         </>
       ))}
