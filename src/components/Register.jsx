@@ -6,33 +6,27 @@ export default function Registration(props) {
   const [usersName, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [selectedFile, setSelectedFile] = useState(null);
 
   const register = (e) => {
     Axios.post("http://localhost:3001/api/users", {
       name: usersName,
       email: email,
       password: password,
-      photo: selectedFile,
     })
       .then((res) => {
         console.log(res);
-        const user = JSON.stringify(res.data);
+        const user = JSON.stringify(res.data.email);
         localStorage.setItem("userID", user);
       })
       .catch((err) => {
         console.log(err);
       });
+    props.setRegister(false);
     props.setLoggedIn(true);
   };
 
-  const fileHandler = (e) => {
-    console.log(e.target.files[0]);
-    setSelectedFile(e.target.files[0]);
-  };
-
   return (
-    <div id="background">
+    <div id="register-form">
       <Form id="register">
         <h1>Register Now!</h1>
         <Form.Group className="mb-3">
@@ -76,19 +70,9 @@ export default function Registration(props) {
             }}
           />
         </Form.Group>
-        <form id="upload">
-          <label for="file">File to upload</label>
-          <input
-            type="file"
-            id="file"
-            accept="image/*"
-            onChange={fileHandler}
-          />
-        </form>
-        <Button variant="dark" type="submit" onClick={register}>
+        <Button id="regSubmit" variant="dark" type="submit" onClick={register}>
           Submit
         </Button>
-        Already have an account? <a href="/login">Log in</a> here!
       </Form>
     </div>
   );

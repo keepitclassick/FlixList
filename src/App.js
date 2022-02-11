@@ -112,12 +112,17 @@ function App() {
         <nav class="navbar navbar-custom">
           <h1 class="title">
             FlixList <br />
-            <button onClick={switchTheme}>
+            <button id="mode" onClick={switchTheme}>
               Switch to {theme === "light" ? "Dark Mode" : "Light Mode"}
             </button>
           </h1>
-          {user ? <button onClick={logout}>Logout</button> : null}
+
           <form class="form-inline d-flex">
+            {user ? (
+              <button id="logout" onClick={logout}>
+                Logout
+              </button>
+            ) : null}{" "}
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="40"
@@ -134,7 +139,7 @@ function App() {
             <SearchBox
               searchValue={searchValue}
               setSearchValue={setSearchValue}
-            />{" "}
+            />
           </form>
         </nav>
         <div className="row d-flex align-items-center mt-4 mb-4">
@@ -169,16 +174,17 @@ function App() {
             </div>
           </>
         ) : null}
-        {!register ? (
+        {!loggedIn && !register ? (
           <div>
             <center>
               <h2>Log in to add to your watch list!</h2>
               <Login setLoggedIn={setLoggedIn} setRegister={setRegister} />
             </center>
           </div>
-        ) : (
-          <Register setLoggedIn={setLoggedIn} />
-        )}
+        ) : null}
+        {register ? (
+          <Register setLoggedIn={setLoggedIn} setRegister={setRegister} />
+        ) : null}
       </div>
     </>
   );
