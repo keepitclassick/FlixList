@@ -1,13 +1,10 @@
 import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
-
 import Axios from "axios";
 
 export default function Registration(props) {
   const [usersName, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [location, setLocation] = useState("");
-  const [cell, setCell] = useState("");
   const [password, setPassword] = useState("");
   const [selectedFile, setSelectedFile] = useState(null);
 
@@ -15,11 +12,11 @@ export default function Registration(props) {
     Axios.post("http://localhost:3001/api/users", {
       name: usersName,
       email: email,
-      phone_number: cell,
       password: password,
-      location: location,
+      photo: selectedFile.name,
     })
       .then((res) => {
+        console.log(res);
         const user = JSON.stringify(res.data);
         localStorage.setItem("userID", user);
       })
@@ -34,17 +31,8 @@ export default function Registration(props) {
     setSelectedFile(e.target.files[0]);
   };
 
-  const fileUploadHandler = (e) => {};
-
   return (
     <div id="background">
-      <form id="upload">
-        <label for="file">File to upload</label>
-        <input type="file" id="file" accept="image/*" onChange={fileHandler} />
-        <div id="app"></div>
-
-        <button onClick={fileUploadHandler}>Upload</button>
-      </form>
       <Form id="register">
         <h1>Register Now!</h1>
         <Form.Group className="mb-3">
@@ -88,6 +76,16 @@ export default function Registration(props) {
             }}
           />
         </Form.Group>
+        <form id="upload">
+          <label for="file">File to upload</label>
+          <input
+            type="file"
+            id="file"
+            accept="image/*"
+            onChange={fileHandler}
+          />
+          <div id="app"></div>
+        </form>
         <Button variant="dark" type="submit" onClick={register}>
           Submit
         </Button>
