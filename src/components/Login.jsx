@@ -21,7 +21,7 @@ export default function Login(props) {
       .post("/api/login", data)
       .then((res) => {
         setCurrentUser(res.data);
-        const user = JSON.stringify(res.data.id);
+        const user = JSON.stringify(res.data.email);
         localStorage.setItem("userID", user);
       })
       .catch((err) => {

@@ -41,7 +41,7 @@ const Rating = (props) => {
                 }
                 onMouseEnter={() => setHover(ratingVal)}
                 onMouseLeave={() => setHover(null)}
-                size={38.5}
+                size={38.3}
               />
             </div>
           </label>

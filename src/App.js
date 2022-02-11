@@ -9,6 +9,7 @@ import RemoveFavourites from "./components/RemoveFavourites";
 import FavouriteList from "./components/FavouriteList";
 import useLocalStorage from "use-local-storage";
 import Login from "./components/Login";
+import Register from "./components/Register";
 
 function App() {
   const defaultDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
@@ -92,6 +93,7 @@ function App() {
     const newTheme = theme === "light" ? "dark" : "light";
     setTheme(newTheme);
   };
+  const user = JSON.parse(localStorage.getItem("userID"));
 
   return (
     <>
@@ -103,7 +105,7 @@ function App() {
               Switch to {theme === "light" ? "Dark Mode" : "Light Mode"}
             </button>
           </h1>
-
+          {user ? <button>Logout</button> : <button>Register</button>}
           <form class="form-inline d-flex">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -154,6 +156,7 @@ function App() {
             <center>
               <h2>Log in to add to your watch list!</h2>
               <Login setLoggedIn={setLoggedIn} />
+              <Register setLoggedIn={setLoggedIn} />
             </center>
           </div>
         )}
