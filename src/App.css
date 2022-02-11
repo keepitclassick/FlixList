@@ -24,6 +24,7 @@ body {
   color: rgb(255, 255, 255);
   border-radius: 5px 5px 5px 5px;
   width: 300px;
+  height: 40px;
   font-size: medium;
 }
 
@@ -78,7 +79,7 @@ img#moviePic {
   background: black;
   background-image: url("https://cdn.staticcrate.com/stock-hd/effects/footagecrate-low-poly-background-black-wall-prev-full.png");
   color: rgb(214, 4, 4);
-
+  text-shadow: 2px 2px #1d1c1c;
   background-color: black;
   background-size: cover;
 }
@@ -89,7 +90,7 @@ img#moviePic {
   color: rgb(255, 255, 255);
   background-size: cover;
 
-  text-shadow: 2px 1px #1d1c1c;
+  text-shadow: 2px 1px 2px #1d1c1c;
 }
 .App {
   color: var(--text-primary);
@@ -143,13 +144,14 @@ input[type="radio"] {
 
 .navbar-custom {
   background-color: #2e2c30;
-  box-shadow: 0 0 10px black;
+  box-shadow: 0 0 10px rgb(19, 18, 18);
 }
 
 h2 {
   font-family: "Raleway", sans-serif;
   font-size: 45px;
   background: rgb(74 72 72 / 50%);
+  box-shadow: 0 0 10px rgb(19, 18, 18);
 }
 
 .Login {
@@ -164,4 +166,10 @@ h2 {
 
   width: 300px;
   font-size: medium;
+}
+
+#login {
+  margin-left: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
 }

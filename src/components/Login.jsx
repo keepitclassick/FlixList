@@ -23,12 +23,12 @@ export default function Login(props) {
         setCurrentUser(res.data);
         const user = JSON.stringify(res.data.email);
         localStorage.setItem("userID", user);
+        props.setLoggedIn(true);
       })
       .catch((err) => {
         console.log(err);
         window.alert("Incorrect email or password");
       });
-    props.setLoggedIn(true);
   };
 
   return (
@@ -52,8 +52,11 @@ export default function Login(props) {
           />
         </Form.Group>
         <div className="btn">
-          <button type="submit" onClick={login}>
+          <button id="login" type="submit" onClick={login}>
             Login
+          </button>
+          <button id="register" onClick={props.setRegister}>
+            Register
           </button>
         </div>
       </Form>

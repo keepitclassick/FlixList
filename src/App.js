@@ -22,6 +22,7 @@ function App() {
   );
   const [ratings, setRatings] = useState([]);
   const [loggedIn, setLoggedIn] = useState(false);
+  const [register, setRegister] = useState(false);
 
   const getMovies = async (searchValue) => {
     const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=8186b72e`;
@@ -119,8 +120,8 @@ function App() {
           <form class="form-inline d-flex">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="30"
-              height="30"
+              width="40"
+              height="40"
               fill="currentColor"
               class="bi bi-search-heart"
               viewBox="0 0 16 16"
@@ -137,8 +138,10 @@ function App() {
           </form>
         </nav>
         <div className="row d-flex align-items-center mt-4 mb-4">
-          {!searchValue && !movies ? (
-            <h1>No Search Entered. Search above!</h1>
+          {!searchValue || !movies ? (
+            <center>
+              <h2>No Search Entered. Search above!</h2>
+            </center>
           ) : (
             <MovieListHeading heading="Search Results" />
           )}
@@ -165,13 +168,16 @@ function App() {
               />
             </div>
           </>
-        ) : (
+        ) : null}
+        {!register ? (
           <div>
             <center>
               <h2>Log in to add to your watch list!</h2>
-              <Login setLoggedIn={setLoggedIn} />
+              <Login setLoggedIn={setLoggedIn} setRegister={setRegister} />
             </center>
           </div>
+        ) : (
+          <Register setLoggedIn={setLoggedIn} />
         )}
       </div>
     </>
