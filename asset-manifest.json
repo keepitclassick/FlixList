@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/FlixList/static/css/main.3fe6209b.css",
+    "main.js": "/FlixList/static/js/main.21ddbe32.js",
+    "static/js/787.7c42db31.chunk.js": "/FlixList/static/js/787.7c42db31.chunk.js",
+    "index.html": "/FlixList/index.html",
+    "main.3fe6209b.css.map": "/FlixList/static/css/main.3fe6209b.css.map",
+    "main.21ddbe32.js.map": "/FlixList/static/js/main.21ddbe32.js.map",
+    "787.7c42db31.chunk.js.map": "/FlixList/static/js/787.7c42db31.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3fe6209b.css",
+    "static/js/main.21ddbe32.js"
+  ]
+}
