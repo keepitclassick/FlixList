@@ -25,7 +25,7 @@ function App() {
   const [register, setRegister] = useState(false);
 
   const getMovies = async (searchValue) => {
-    const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=8186b72e`;
+    const url = `https://www.omdbapi.com/?s=${searchValue}&apikey=8186b72e`;
 
     const res = await fetch(url);
     const resJson = await res.json();
